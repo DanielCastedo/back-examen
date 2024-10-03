@@ -5,6 +5,7 @@ com\phegondev\usersmanagementsystem\repository\Sesionrepo.class
 com\phegondev\usersmanagementsystem\service\UsersManagementService.class
 com\phegondev\usersmanagementsystem\config\CorsConfig$1.class
 com\phegondev\usersmanagementsystem\service\JWTUtils.class
+com\phegondev\usersmanagementsystem\dto\SesionDTO.class
 com\phegondev\usersmanagementsystem\config\JWTAuthFilter.class
 com\phegondev\usersmanagementsystem\controller\SesionController.class
 com\phegondev\usersmanagementsystem\repository\UsersRepo.class

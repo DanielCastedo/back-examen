@@ -11,5 +11,6 @@ C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\conf
 C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\controller\SesionController.java
 C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\dto\ReqRes.java
 C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\UsersmanagementsystemApplication.java
+C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\dto\SesionDTO.java
 C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\service\OurUserDetailsService.java
 C:\daniel\sw1\back-examen\src\main\java\com\phegondev\usersmanagementsystem\repository\Sesionrepo.java

@@ -1,5 +1,6 @@
 package com.phegondev.usersmanagementsystem.service;
 
+import com.phegondev.usersmanagementsystem.dto.SesionDTO;
 import com.phegondev.usersmanagementsystem.entity.OurUsers;
 import com.phegondev.usersmanagementsystem.entity.Sesion;
 import com.phegondev.usersmanagementsystem.repository.Sesionrepo;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class SesionService {
@@ -33,9 +36,17 @@ public class SesionService {
         }
     }
 
-    // Obtener todas las sesiones
-    public List<Sesion> getAllSesiones() {
-        return sesionrepo.findAll();
+    // Obtener todas las sesiones como DTOs
+    // Obtener todas las sesiones como DTOs
+    public List<SesionDTO> getAllSesiones() {
+        return sesionrepo.findAll().stream()
+                .map(sesion -> new SesionDTO(
+                        sesion.getId(),
+                        sesion.getLink(),
+                        sesion.getNombre(),
+                        sesion.getOurUser().getId() // Solo devuelves el ID del usuario
+                ))
+                .collect(Collectors.toList());
     }
 
     // Obtener sesiones por ID de usuario
@@ -47,11 +58,13 @@ public class SesionService {
     }
 
     // Eliminar una sesión por su ID
-    public void deleteSesion(Integer sesionId) {
+    public boolean deleteSesion(Integer sesionId) {
         if (sesionrepo.existsById(sesionId)) {
             sesionrepo.deleteById(sesionId);
+            return true;
         } else {
-            throw new IllegalArgumentException("Sesion not found");
+            return false; // Devuelve false si no existe la sesión
         }
     }
+
 }
