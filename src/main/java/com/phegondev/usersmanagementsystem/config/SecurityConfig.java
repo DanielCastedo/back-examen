@@ -39,7 +39,7 @@ public class SecurityConfig {
                         .requestMatchers("/user/**").hasAuthority("USER")
                         .requestMatchers("/adminuser/**").hasAnyAuthority("ADMIN", "USER")
                         .requestMatchers("/grupos/**").hasAnyAuthority("ADMIN")
-                        .requestMatchers("/aulas/**").hasAnyAuthority("ADMIN","USER")
+                        .requestMatchers("/sesiones/**").hasAnyAuthority("ADMIN","USER")
                         .requestMatchers("/gestiones/**").hasAnyAuthority("ADMIN")
                         .requestMatchers("/api/users/**").hasAnyAuthority("ADMIN","USER")
                         .anyRequest().authenticated())
